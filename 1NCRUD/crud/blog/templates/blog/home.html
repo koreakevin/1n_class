@@ -1,0 +1,25 @@
+{% extends 'blog/layout.html' %}
+{% block content %}
+{% for blog in blogs.all %}
+        <hr>
+        <h4><b>Title[ {{ blog.title }} ]</b></h4>
+        <hr>
+        <div>
+            <span><i>[ {{ blog.pub_date }} ]</i></span>
+        </div>
+        <div style="color: #585858; font-size: 18px;">
+            <p>{{ blog.body }}</p>
+        </div>
+        <hr>
+        <div>
+           
+        </div>
+        <div style="text-align: right;">
+                <a role="button" href="{% url 'edit' pk=blog.pk %}">Edit</a>
+                &nbsp;&nbsp;
+                <a role="button" href="{% url 'remove' pk=blog.pk %}">Remove</a>
+                <a role="button" href="{% url 'comment' blog.id %}">Comment</a>
+        </div>
+        <hr>
+{% endfor %}
+{% endblock %}

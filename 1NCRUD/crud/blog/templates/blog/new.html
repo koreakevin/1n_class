@@ -1,0 +1,13 @@
+{% extends 'blog/layout.html'%}
+{% block content %}
+<div class="alert alert-secondary" role="alert">
+    <form method="POST">
+        {% csrf_token %}
+        <div style="text-align: center; font-size: 20px;">
+                <table class="new_table">
+                    {{form.as_table}}
+                </table>
+                <input onClick="location.href='home'" type="submit" value="Submission">
+    </form>
+</div>
+{% endblock %}

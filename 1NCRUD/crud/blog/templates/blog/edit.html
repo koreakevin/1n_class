@@ -1,0 +1,7 @@
+{% extends 'blog/layout.html' %}
+{% block content %}
+    <form method="POST" >{% crsf_token %}
+        {{form.as_table}}
+        <button type="submit" class="btn-default">Save</button>
+    </form>
+{% endblock %}
